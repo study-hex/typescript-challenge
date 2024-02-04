@@ -10,4 +10,7 @@
 
 export function sortNumbers(numbers: number[]): number[] {
   // 在此實現函式
+  return numbers.sort((a, b) => a - b);
 }
+
+sortNumbers([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]);

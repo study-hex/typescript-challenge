@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+// #NOTES: 在 Node.js 中沒有內建的 fetch 函式
 /**
  * 任務：實作一個 async 函式 `fetchData`，該函式應該能夠從指定的 URL 取得資料。
  * 範例：fetchData('https://jsonplaceholder.typicode.com/todos/1') 應該回傳一個包含 id、title 等屬性的物件
@@ -6,4 +8,13 @@
  */
 
 // 請在下方寫下你的程式碼
+export async function fetchData(url: string): Promise<any> {
+    const response = await fetch(url);
+    if (!response.ok) {
+        // throw new Error(`HTTP error! status: ${response.status}`);
+        console.log(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+}
 
+fetchData('https://jsonplaceholder.typicode.com/todos/1').then(data => console.log(data));

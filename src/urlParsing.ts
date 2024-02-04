@@ -20,4 +20,13 @@ interface UrlParts {
 
 export function parseUrl(url: string): UrlParts {
    // 請在此處寫下你的程式碼
+    const urlObj = new URL(url);
+    const result = {
+        protocol: urlObj.protocol,
+        hostname: urlObj.hostname,
+        path: urlObj.pathname
+    }
+    return result;
 }
+
+parseUrl('https://www.example.com/path');

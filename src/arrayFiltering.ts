@@ -10,4 +10,8 @@
  */
 export function filterEvens(numbers: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.filter((n) => n % 2 === 0);
 }
+
+filterEvens([1, 2, 3, 4]);
+filterEvens([5, 6, 7, 8]);
